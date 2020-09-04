@@ -39,4 +39,8 @@ public class EnrolleeService {
 		
 		enrolleeRepository.deleteById(id);
 	}
+	
+	public Enrollee findByName(String name) {
+		return enrolleeRepository.findByName(name);
+	}
 }

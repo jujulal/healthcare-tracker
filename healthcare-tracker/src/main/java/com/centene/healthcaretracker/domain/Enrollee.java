@@ -32,11 +32,10 @@ public class Enrollee {
 
 	
 	public Enrollee() {
-		super();
+		
 	}
 
 	public Enrollee(Long id, String name, boolean status, Date dob, String phone, List<Dependent> dependents) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.status = status;

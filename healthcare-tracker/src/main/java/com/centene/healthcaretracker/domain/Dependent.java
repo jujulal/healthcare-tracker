@@ -29,11 +29,9 @@ public class Dependent {
 	private Enrollee enrollee;
 
 	public Dependent() {
-		super();
 	}
 
 	public Dependent(Long id, String name, Date dob, Enrollee enrollee) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.dob = dob;
