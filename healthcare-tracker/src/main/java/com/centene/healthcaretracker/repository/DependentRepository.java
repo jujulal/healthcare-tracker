@@ -11,4 +11,5 @@ import com.centene.healthcaretracker.domain.Enrollee;
 public interface DependentRepository extends JpaRepository<Dependent, Long>{
 	
 	List<Dependent> findByEnrollee(Enrollee enrollee);
+	List<Dependent> findByName(String name);
 }

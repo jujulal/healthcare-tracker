@@ -35,4 +35,7 @@ public class DependentService {
 	public void removeDependent(Long id) {
 		dependentRepository.deleteById(id);
 	}
+	public List<Dependent> findByName(String name){
+		return dependentRepository.findByName(name);
+	}
 }

@@ -19,7 +19,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -65,8 +64,8 @@ public class EnrolleeTrackControllerTest {
 	}
 
 	@Test
-	public void addEnrolleeTest() throws Exception {
-		MvcResult result = mockMvc
+	public void addEnrolleeAndgetByIdTest() throws Exception {
+		mockMvc
 				.perform(post("/addEnrollee").contentType(MediaType.APPLICATION_JSON)
 						.content(asJsonString(mockEnrollee)).accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
