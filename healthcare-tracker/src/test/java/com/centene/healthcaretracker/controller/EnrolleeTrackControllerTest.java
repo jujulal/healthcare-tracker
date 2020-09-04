@@ -14,6 +14,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -34,6 +36,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @AutoConfigureMockMvc
 public class EnrolleeTrackControllerTest {
 
+	private Logger log = LoggerFactory.getLogger(EnrolleeTrackControllerTest.class);
+	
 	@Autowired
 	EnrolleeService enrolleeService;
 	@Autowired
@@ -67,12 +71,12 @@ public class EnrolleeTrackControllerTest {
 						.content(asJsonString(mockEnrollee)).accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andReturn();
-		
 		//asserting value object return from service
 		Enrollee enrollee = enrolleeService.findByName("Bibek Shrestha");
 		assertNotNull(enrollee);
 		assertTrue(enrollee.getName().contentEquals("Bibek Shrestha"));
 		assertTrue(enrollee.getPhone().contentEquals("234-354-9876"));
+		log.info("Add enrollee test complete!");
 		
 	}
 

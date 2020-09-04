@@ -3,6 +3,8 @@ package com.centene.healthcaretracker.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,11 +14,13 @@ import com.centene.healthcaretracker.repository.EnrolleeRepository;
 @Service
 public class EnrolleeService {
 	
+	private Logger log = LoggerFactory.getLogger(EnrolleeService.class);
+	
 	@Autowired
 	private EnrolleeRepository enrolleeRepository;
 	
 	public Enrollee addEnrollee(Enrollee enrollee) {
-		
+		log.info("EnrolleeService added new Enrollee!");
 		return enrolleeRepository.save(enrollee);
 	}
 	
